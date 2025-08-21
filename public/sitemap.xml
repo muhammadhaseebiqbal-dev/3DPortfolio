@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://haseebiqbal.site/</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-profile.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - Full Stack Developer</image:title>
+      <image:caption>Official portrait of Muhammad Haseeb Iqbal, Full Stack Developer and AI Engineer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-developer.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - Professional Developer</image:title>
+      <image:caption>Muhammad Haseeb Iqbal working on software development projects</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-ai-engineer.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - AI Engineer</image:title>
+      <image:caption>Muhammad Haseeb Iqbal specializing in AI and machine learning development</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-react-developer.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - React TypeScript Developer</image:title>
+      <image:caption>Muhammad Haseeb Iqbal coding React and TypeScript applications</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-software-engineer.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - Software Engineer</image:title>
+      <image:caption>Muhammad Haseeb Iqbal in professional software engineering environment</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-portfolio.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - Portfolio Showcase</image:title>
+      <image:caption>Muhammad Haseeb Iqbal presenting his professional portfolio and projects</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://haseebiqbal.site/#about</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haseebiqbal.site/#work</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://haseebiqbal.site/#contact</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://haseebiqbal.site/profile-images.html</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-profile.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - Professional Portrait</image:title>
+      <image:caption>Official professional headshot of Muhammad Haseeb Iqbal, Full Stack Developer and AI Engineer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-developer.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - React TypeScript Developer</image:title>
+      <image:caption>Muhammad Haseeb Iqbal working on React and TypeScript development projects</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseebiqbal.site/images/muhammad-haseeb-iqbal-ai-engineer.jpg</image:loc>
+      <image:title>Muhammad Haseeb Iqbal - AI and Machine Learning Engineer</image:title>
+      <image:caption>Muhammad Haseeb Iqbal specializing in artificial intelligence and machine learning development</image:caption>
+    </image:image>
+  </url>
+</urlset>

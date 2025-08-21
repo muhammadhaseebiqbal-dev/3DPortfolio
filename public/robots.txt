@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Enhanced for personal branding
+Allow: /images/
+Allow: /public/images/
+
+# Sitemaps
+Sitemap: https://haseebiqbal.site/sitemap.xml
+
+# Additional directives for better indexing
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
