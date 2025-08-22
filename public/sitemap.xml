@@ -17,63 +17,6 @@
       <image:caption>Muhammad Haseeb Iqbal - Professional Software Engineer and Creative Developer</image:caption>
     </image:image>
   </url>
-  
-  <!-- Project URLs for SEO Ranking -->
-  <url>
-    <loc>https://haseebiqbal.site/projects/3d-resume</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://fylfly.vercel.app/</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/muhammadhaseebiqbal-dev/DopeShell</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://conways-game-of-life-tawny.vercel.app/</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://capstone-one-dun.vercel.app</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://spendify-zeta.vercel.app/</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://task-flow-dusky.vercel.app/</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/muhammadhaseebiqbal-dev/Docxer/releases</loc>
-    <lastmod>2025-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
   <url>
     <loc>https://haseebiqbal.site/#about</loc>
