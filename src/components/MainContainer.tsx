@@ -3,14 +3,15 @@ import Cursor from "./Cursor";
 import Landing from "./Landing";
 import Navbar from "./Navbar";
 import setSplitText from "./utils/splitText";
+// Import Work component directly for faster loading
+import Work from "./Work";
 
-// Lazy load heavy components
+// Lazy load other components
 const About = lazy(() => import("./About"));
 const Career = lazy(() => import("./Career"));
 const Contact = lazy(() => import("./Contact"));
 const SocialIcons = lazy(() => import("./SocialIcons"));
 const WhatIDo = lazy(() => import("./WhatIDo"));
-const Work = lazy(() => import("./Work"));
 const TechStack = lazy(() => import("./TechStack"));
 
 const MainContainer = ({ children }: PropsWithChildren) => {
@@ -58,9 +59,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
               </Suspense>
             </section>
             <section id="portfolio" aria-label="My Work Portfolio">
-              <Suspense fallback={<div className="loading-placeholder">Loading Portfolio...</div>}>
-                <Work />
-              </Suspense>
+              <Work />
             </section>
             {isDesktopView && (
               <Suspense fallback={<div className="loading-placeholder">Loading Tech Stack...</div>}>

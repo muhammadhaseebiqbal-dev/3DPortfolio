@@ -13,32 +13,14 @@ const WorkImage = (props: Props) => {
   const [isVideo, setIsVideo] = useState(false);
   const [video, setVideo] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
-  // Intersection Observer for lazy loading
+  // Preload image immediately on component mount
   useEffect(() => {
-    const img = imgRef.current;
-    if (!img) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.unobserve(img);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '50px' }
-    );
-
-    observer.observe(img);
-
-    return () => {
-      observer.unobserve(img);
-    };
-  }, []);
+    const img = new Image();
+    img.src = props.image;
+    img.onload = () => setIsLoaded(true);
+  }, [props.image]);
 
   const handleMouseEnter = useCallback(async () => {
     if (props.video && isLoaded) {
@@ -90,9 +72,9 @@ const WorkImage = (props: Props) => {
         )}
         <img 
           ref={imgRef}
-          src={isInView ? props.image : undefined}
+          src={props.image}
           alt={props.alt} 
-          loading="lazy"
+          loading="eager"
           decoding="async"
           onLoad={handleImageLoad}
           style={{
