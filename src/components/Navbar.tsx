@@ -2,24 +2,34 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+gsap.registerPlugin(ScrollTrigger);
+
+// Alternative to ScrollSmoother - simple smooth scroll implementation
+export let smoother = {
+  paused: (paused?: boolean) => {
+    if (paused !== undefined) {
+      document.body.style.overflow = paused ? 'hidden' : 'auto';
+    }
+  },
+  scrollTo: (target: string, smooth: boolean = true, position: string = "top") => {
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: smooth ? 'smooth' : 'auto',
+        block: position.includes('top') ? 'start' : 'end'
+      });
+    }
+  },
+  scrollTop: (value: number) => {
+    window.scrollTo({ top: value, behavior: 'smooth' });
+  }
+};
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
+    // Initialize smooth scroll behavior
     smoother.scrollTop(0);
     smoother.paused(true);
 
@@ -31,12 +41,14 @@ const Navbar = () => {
           e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+          if (section) {
+            smoother.scrollTo(section, true, "top");
+          }
         }
       });
     });
     window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
+      ScrollTrigger.refresh();
     });
   }, []);
   return (
