@@ -1,30 +1,10 @@
+import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { smoother } from "../Navbar";
 
-// Alternative to SplitText - splits text into characters manually
-function splitTextToChars(selector: string): HTMLElement[] {
-  const elements = document.querySelectorAll(selector);
-  const chars: HTMLElement[] = [];
-  
-  elements.forEach((element) => {
-    const text = element.textContent || '';
-    element.innerHTML = '';
-    
-    text.split('').forEach((char) => {
-      const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space
-      span.style.display = 'inline-block';
-      element.appendChild(span);
-      chars.push(span);
-    });
-  });
-  
-  return chars;
-}
-
 export function initialFX() {
   document.body.style.overflowY = "auto";
-  if (smoother) smoother.paused(false);
+  smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {
     backgroundColor: "#0b080c",
@@ -32,10 +12,15 @@ export function initialFX() {
     delay: 1,
   });
 
-  // Split and animate landing text
-  const landingChars = splitTextToChars(".landing-info h3, .landing-intro h2, .landing-intro h1");
+  var landingText = new SplitText(
+    [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
+    {
+      type: "chars,lines",
+      linesClass: "split-line",
+    }
+  );
   gsap.fromTo(
-    landingChars,
+    landingText.chars,
     { opacity: 0, y: 80, filter: "blur(5px)" },
     {
       opacity: 1,
@@ -48,10 +33,11 @@ export function initialFX() {
     }
   );
 
-  // Split and animate h2 info text
-  const landingH2Chars = splitTextToChars(".landing-h2-info");
+  let TextProps = { type: "chars,lines", linesClass: "split-h2" };
+
+  var landingText2 = new SplitText(".landing-h2-info", TextProps);
   gsap.fromTo(
-    landingH2Chars,
+    landingText2.chars,
     { opacity: 0, y: 80, filter: "blur(5px)" },
     {
       opacity: 1,
@@ -86,22 +72,21 @@ export function initialFX() {
     }
   );
 
-  // Create looping text animations
-  const landingH2Info1Chars = splitTextToChars(".landing-h2-info-1");
-  const landingH21Chars = splitTextToChars(".landing-h2-1");
-  const landingH22Chars = splitTextToChars(".landing-h2-2");
+  var landingText3 = new SplitText(".landing-h2-info-1", TextProps);
+  var landingText4 = new SplitText(".landing-h2-1", TextProps);
+  var landingText5 = new SplitText(".landing-h2-2", TextProps);
 
-  LoopText(landingH2Chars, landingH2Info1Chars);
-  LoopText(landingH21Chars, landingH22Chars);
+  LoopText(landingText2, landingText3);
+  LoopText(landingText4, landingText5);
 }
 
-function LoopText(Text1Chars: HTMLElement[], Text2Chars: HTMLElement[]) {
+function LoopText(Text1: SplitText, Text2: SplitText) {
   var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
   const delay = 4;
   const delay2 = delay * 2 + 1;
 
   tl.fromTo(
-    Text2Chars,
+    Text2.chars,
     { opacity: 0, y: 80 },
     {
       opacity: 1,
@@ -114,7 +99,7 @@ function LoopText(Text1Chars: HTMLElement[], Text2Chars: HTMLElement[]) {
     0
   )
     .fromTo(
-      Text1Chars,
+      Text1.chars,
       { y: 80 },
       {
         duration: 1.2,
@@ -126,7 +111,7 @@ function LoopText(Text1Chars: HTMLElement[], Text2Chars: HTMLElement[]) {
       1
     )
     .fromTo(
-      Text1Chars,
+      Text1.chars,
       { y: 0 },
       {
         y: -80,
@@ -138,7 +123,7 @@ function LoopText(Text1Chars: HTMLElement[], Text2Chars: HTMLElement[]) {
       0
     )
     .to(
-      Text2Chars,
+      Text2.chars,
       {
         y: -80,
         duration: 1.2,
